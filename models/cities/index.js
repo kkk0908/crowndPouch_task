@@ -10,3 +10,6 @@ exports.fetchCities = ({ skip, limit, sortField, sortValue, searchText }) => {
     }
     return Cities.paginate(query, { skip, limit, lean: true, sort: { [sortField]: sortValue } })
 }
+
+exports.fetchCitiesByMaxPop = () => Cities.find().sort({ pop: -1 }).select(["city", "pop"]).lean()
+

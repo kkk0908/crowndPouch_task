@@ -16,6 +16,11 @@ citiesRouter.get("/", celebrate({
     err => response.status(err.status).json(err))
 });
 
+citiesRouter.get("/citiesByMaxPop", (request, response) => {
+  citiesController.fetchCitiesByMaxPop(request.query).then(res => response.status(res.status).json(res),
+    err => response.status(err.status).json(err))
+});
+
 citiesRouter.post("/", (request, response) => {
   // post method
 });
