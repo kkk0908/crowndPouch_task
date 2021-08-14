@@ -19,6 +19,7 @@ const globalMiddlewares = (app, server) => {
     // Have Node serve the files for our built React app
 
     app.use("/article", routes.article);
+    app.use("/cities", routes.cities);
 
     app.use(cors()); // core 
 

@@ -4,9 +4,13 @@ module.exports = {
     {
       name: "article",
       path: "/article"
+    },
+    {
+      name: "cities",
+      path: "/cities"
     }
   ],
-  models: ["article"],
+  models: ["article", "cities"],
   autoRequireRoutes: true,
   registerDocsRoute: true
 };

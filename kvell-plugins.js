@@ -3,7 +3,7 @@ module.exports = {
         {
             resolve: "kvell-db-plugin-mongoose",
             options: {
-                mongoConnectionString: "mongodb://localhost:27017/sportcafe",
+                mongoConnectionString: "mongodb://localhost:27017/crowdpouch",
                 options: {},
                 showConnectionMessage: true
             }
