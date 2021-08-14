@@ -12,4 +12,5 @@ exports.fetchCities = ({ skip, limit, sortField, sortValue, searchText }) => {
 }
 
 exports.fetchCitiesByMaxPop = () => Cities.find().sort({ pop: -1 }).select(["city", "pop"]).lean()
+// used lean for fast fetch the data
 

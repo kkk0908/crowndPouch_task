@@ -21,8 +21,9 @@ citiesRouter.get("/citiesByMaxPop", (request, response) => {
     err => response.status(err.status).json(err))
 });
 
-citiesRouter.post("/", (request, response) => {
-  // post method
+citiesRouter.post("/uploadVideo", (request, response) => {
+  citiesController.uploadVideo(request.body).then(res => response.status(res.status).json(res),
+    err => response.status(err.status).json(err))
 });
 
 citiesRouter.put("/", (request, response) => {

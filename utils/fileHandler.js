@@ -17,9 +17,9 @@ exports.filePathHandler = (filePath, fileName, oldFilePath) => {
 
   return new Promise((resolve, reject) => {
     if (
-      path.extname(filePath) === ".png" ||
-      path.extname(filePath) === ".jpg" ||
-      path.extname(filePath) === ".jpeg"
+      path.extname(filePath) === ".mp4"
+      // path.extname(filePath) === ".jpg" ||
+      // path.extname(filePath) === ".jpeg"
 
     ) {
       mv(oldFilePath, filePath, (err) => {
