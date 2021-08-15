@@ -13,7 +13,7 @@ const citySchema = new mongoose.Schema({
     timestamps: true,
     toJSON: {
         transform: function (doc, ret) {
-            // ret.id = ret._id;
+            ret.loc = ret.loc[0] + ', ' + ret.loc[1];
             // delete ret._id;
             delete ret.__v;
             return ret;

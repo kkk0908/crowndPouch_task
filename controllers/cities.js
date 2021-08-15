@@ -16,6 +16,16 @@ citiesController.fetchCities = async (query) => {
     }
 }
 
+citiesController.fetchAllCitiesWithNoCond = async () => {
+    try {
+        let cities = await citiesModelMethod.fetchAllCitiesWithNoCond()
+        return { ...httpStatus.FETCHED, cities }
+    } catch (error) {
+        console.log(error)
+        return httpStatus.INTERNAL_SERVER_ERROR
+    }
+}
+
 citiesController.fetchCitiesByMaxPop = async () => {
     try {
         let cities = await citiesModelMethod.fetchCitiesByMaxPop()

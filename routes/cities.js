@@ -8,7 +8,7 @@ citiesRouter.get("/", celebrate({
     skip: Joi.number().allow('', null),
     limit: Joi.number().allow('', null),
     sortField: Joi.string().allow('', null),
-    sortValue: Joi.number().allow('', null),
+    sortValue: Joi.string().allow('', null),
     searchText: Joi.string().allow('', null),
   })
 }), errors(), (request, response) => {
@@ -18,6 +18,11 @@ citiesRouter.get("/", celebrate({
 
 citiesRouter.get("/citiesByMaxPop", (request, response) => {
   citiesController.fetchCitiesByMaxPop(request.query).then(res => response.status(res.status).json(res),
+    err => response.status(err.status).json(err))
+});
+
+citiesRouter.get("/citiesByNoCond", (request, response) => {
+  citiesController.fetchAllCitiesWithNoCond(request.query).then(res => response.status(res.status).json(res),
     err => response.status(err.status).json(err))
 });
 
