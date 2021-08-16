@@ -38,6 +38,7 @@ citiesController.fetchCitiesByMaxPop = async () => {
 
 citiesController.uploadVideo = async ({ files }) => {
     try {
+        console.log(files)
         let file = files.video
         // create directories if doesn't exist
 
